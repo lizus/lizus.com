@@ -1,4 +1,5 @@
 https://lizus.com/github-copilot/how-to-install-github-copilot-to-vscode/
+https://lizus.com/wordpress/wp-date/
 https://lizus.com/seo/seo-navigator/
 https://lizus.com/wordpress/custom-wordpress-mp4/
 https://lizus.com/wordpress/custom-wordpress-sitemap-under-5.5/
@@ -7,7 +8,6 @@ https://lizus.com/html5/html5-video-autoplay/
 https://lizus.com/html5/html5-video-background-solution/
 https://lizus.com/javascript/jquery-smartselects/
 https://lizus.com/php/php-curl-class/
-https://lizus.com/wordpress/wp-date/
 https://lizus.com/about.html
 https://lizus.com/
 https://lizus.com/tags/sitemap/
@@ -18,8 +18,8 @@ https://lizus.com/tags/%E8%A7%86%E9%A2%91%E8%83%8C%E6%99%AF/
 https://lizus.com/tags/jquery-plugin/
 https://lizus.com/tags/curl/
 https://lizus.com/tags/date/
-https://lizus.com/tags/seo-tools/
 https://lizus.com/tags/%E4%BB%A3%E7%A0%81%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7/
+https://lizus.com/tags/seo%E5%B7%A5%E5%85%B7/
 https://lizus.com/categories/wordpress/
 https://lizus.com/categories/html5/
 https://lizus.com/categories/javascript/

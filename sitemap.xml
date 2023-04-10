@@ -11,9 +11,18 @@
   </url>
   
   <url>
+    <loc>https://lizus.com/wordpress/wp-date/</loc>
+    
+    <lastmod>2023-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lizus.com/seo/seo-navigator/</loc>
     
-    <lastmod>2022-12-16</lastmod>
+    <lastmod>2023-04-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -75,15 +84,6 @@
   
   <url>
     <loc>https://lizus.com/php/php-curl-class/</loc>
-    
-    <lastmod>2022-11-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lizus.com/wordpress/wp-date/</loc>
     
     <lastmod>2022-11-13</lastmod>
     
@@ -166,14 +166,14 @@
   </url>
   
   <url>
-    <loc>https://lizus.com/tags/seo-tools/</loc>
+    <loc>https://lizus.com/tags/%E4%BB%A3%E7%A0%81%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2023-04-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://lizus.com/tags/%E4%BB%A3%E7%A0%81%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://lizus.com/tags/seo%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2023-04-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
