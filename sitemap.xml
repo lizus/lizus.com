@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lizus.com/github-copilot/use-copilot-to-create-hello-word-html/</loc>
+    
+    <lastmod>2023-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lizus.com/github-copilot/how-to-install-github-copilot-to-vscode/</loc>
     
     <lastmod>2023-04-10</lastmod>
