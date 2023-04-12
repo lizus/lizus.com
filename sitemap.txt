@@ -1,3 +1,4 @@
+https://lizus.com/github-copilot/how-to-use-copilot-prompt-to-write-a-js-function/
 https://lizus.com/js/debounce-function-js/
 https://lizus.com/github-copilot/use-copilot-to-create-hello-word-html/
 https://lizus.com/github-copilot/how-to-install-github-copilot-to-vscode/
