@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+        <meta name="author" content="Lizus" />
+        
+          <meta name="keywords" content="html5,video,autoplay,github copilot,lizus,WordPress,javascript,css,WordPress theme,WordPress plugin,WordPress定制,hexo,html5,css3" />
+          
+              <title>
+                
+                        HTML5 video autoplay(自动播放设置，包含移动端和微信) - Lizus | An Developer
+                              
+              </title>
+              <meta name="description" content="在html中添加video标签可以直接插处视频，使用autoplay理论上就可以自动播放了。但要做到在各浏览器中兼容，并且有一个良好的样式，则需要额外添加不少代码。根据下面的步骤可以解决大部分问题。 首先，html上添加video代码如下：123456789101112&lt;video id&#x3D;&quot;myVideo&quot; style&#x3D;&quot;object-fit:fill&amp;quot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 video autoplay(自动播放设置，包含移动端和微信)">
+<meta property="og:url" content="https://lizus.com/html5/html5-video-autoplay/index.html">
+<meta property="og:site_name" content="Lizus">
+<meta property="og:description" content="在html中添加video标签可以直接插处视频，使用autoplay理论上就可以自动播放了。但要做到在各浏览器中兼容，并且有一个良好的样式，则需要额外添加不少代码。根据下面的步骤可以解决大部分问题。 首先，html上添加video代码如下：123456789101112&lt;video id&#x3D;&quot;myVideo&quot; style&#x3D;&quot;object-fit:fill&amp;quot">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-18T06:33:03.000Z">
+<meta property="article:modified_time" content="2024-06-27T07:04:00.308Z">
+<meta property="article:author" content="Lizus">
+<meta property="article:tag" content="video">
+<meta property="article:tag" content="autoplay">
+<meta name="twitter:card" content="summary">
+                
+    <link rel="apple-touch-icon" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png ">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    
+                  
+<link rel="stylesheet" href="/static/css/styles.css?v=1.0.3.css">
+
+                    
+                      
+<link rel="stylesheet" href="/%20/static/css/github-markdown.css">
+
+                    
+<link rel="stylesheet" href="/%20/static/css/highlight.css">
+
+                      
+                        
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELQNXEJ6TK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ELQNXEJ6TK');
+    </script>
+    
+  </head>
+
+  <body>
+    <div id="app" class="app">
+      <header class="header">
+    <h2 class="site-logo"><a href="https://lizus.com ">Lizus</a></h2>
+    <ul class="menu">
+        
+            <li>
+                <a href="/" target="_self">
+                    Home
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/wordpress" target="_self">
+                    WordPress
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/seo" target="_self">
+                    seo
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about" target="_self">
+                    About
+                </a>
+            </li>
+            
+    </ul>
+</header>
+        <section class="main">
+          <article class="post">
+  <h1 class="article-title">
+    HTML5 video autoplay(自动播放设置，包含移动端和微信)
+  </h1>
+  <div class="content markdown-body">
+    <p>在html中添加<code>video</code>标签可以直接插处视频，使用<code>autoplay</code>理论上就可以自动播放了。但要做到在各浏览器中兼容，并且有一个良好的样式，则需要额外添加不少代码。根据下面的步骤可以解决大部分问题。</p>
+<h2 id="首先，html上添加video代码如下："><a href="#首先，html上添加video代码如下：" class="headerlink" title="首先，html上添加video代码如下："></a>首先，html上添加video代码如下：</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">&quot;myVideo&quot;</span> <span class="attr">style</span>=<span class="string">&quot;object-fit:fill&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">autoplay</span></span></span><br><span class="line"><span class="tag">            <span class="attr">webkit-playsinline</span>  </span></span><br><span class="line"><span class="tag">            <span class="attr">playsinline</span> </span></span><br><span class="line"><span class="tag">            <span class="attr">x5-video-player-type</span>=<span class="string">&quot;h5&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">x5-video-player-fullscreen</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">x5-video-orientation</span>=<span class="string">&quot;portraint&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">preload</span>=<span class="string">&quot;auto&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">loop</span> </span></span><br><span class="line"><span class="tag">            <span class="attr">muted</span> </span></span><br><span class="line"><span class="tag">            <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">src</span>=<span class="string">&quot;test.mp4&quot;</span>&gt;</span> Sorry, your browser doesn\&#x27;t support embedded videos.  <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="一些说明："><a href="#一些说明：" class="headerlink" title="一些说明："></a>一些说明：</h3><ul>
+<li><code>style=&quot;object-fit:fill&quot;</code> – 视频内容充满整个video容器</li>
+<li><code>muted</code> – 必须静音才能在现代浏览器中启用自动播放</li>
+<li><code>webkit-playsinline playsinline x5-video-player-type=&quot;h5&quot; x5-video-player-fullscreen=&quot;true&quot; x5-video-orientation=&quot;portraint&quot;</code> – 确保在Mac，iOS和安卓上能自动播放</li>
+</ul>
+<h2 id="其次，为解决在微信浏览器中能自动播放，需要添加如下JS代码："><a href="#其次，为解决在微信浏览器中能自动播放，需要添加如下JS代码：" class="headerlink" title="其次，为解决在微信浏览器中能自动播放，需要添加如下JS代码："></a>其次，为解决在微信浏览器中能自动播放，需要添加如下JS代码：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(</span><br><span class="line">            <span class="string">&#x27;WeixinJSBridgeReady&#x27;</span>,</span><br><span class="line">            <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">                <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#myVideo&#x27;</span>).<span class="title function_">play</span>();</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="literal">false</span></span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
+
+  </div>
+  
+    <h3 class="article-meta">
+      - update 2024-06-27
+        
+          
+            <span>
+              <a href="https://lizus.com/categories/html5/ ">
+                html5
+              </a>
+            </span>
+            
+              
+                
+                  
+                    <span>
+                      <a href="https://lizus.com/tags/video/ ">
+                        video
+                      </a>
+                    </span>
+                    
+                    <span>
+                      <a href="https://lizus.com/tags/autoplay/ ">
+                        autoplay
+                      </a>
+                    </span>
+                    
+                      
+    </h3>
+    
+</article>
+
+  <nav class="post-navigation">
+    <span class="nav-item prev">
+      
+        <a class="nav-item-a" href="https://lizus.com/html5/html5-video-background-solution/">
+          HTML5 video background solution(网页视频融入背景兼容解决方案)
+        </a>
+        
+    </span>
+    <span class="nav-item next">
+      
+        <a class="nav-item-a" href="https://lizus.com/wordpress/wp-date/">
+          如何在WordPress自定义当前时间格式
+        </a>
+        
+    </span>
+  </nav>
+  
+        </section>
+        <footer class="footer">
+    <h2 class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.com/svgjs" width="100%" height="100%" viewBox="14 2 36 60">
+        <g>
+            <path
+                d="M45 36h-3v-4H14v25c0 2.8 2.2 5 5 5h18c2.8 0 5-2.2 5-5v-3h3c2.8 0 5-2.2 5-5v-8c0-2.8-2.2-5-5-5zM23.9 54.5l-1.7 1-4.4-7.5 4.3-7.5 1.7 1-3.6 6.5 3.7 6.5zm3.1.8l-2-.6 4-14 1.9.5L27 55.3zm6.9.2l-1.7-1 3.7-6.5-3.7-6.5 1.7-1 4.3 7.5-4.3 7.5zM48 49c0 1.7-1.3 3-3 3h-3V38h3c1.7 0 3 1.3 3 3v8zM38 30h-2v-2c0-1.1-.9-2-2-2H20c-2.2 0-4-1.8-4-4s1.8-4 4-4h14c1.1 0 2-.9 2-2s-.9-2-2-2H20c-2.2 0-4-1.8-4-4s1.8-4 4-4h14c1.1 0 2-.9 2-2V2h2v2c0 2.2-1.8 4-4 4H20c-1.1 0-2 .9-2 2s.9 2 2 2h14c2.2 0 4 1.8 4 4s-1.8 4-4 4H20c-1.1 0-2 .9-2 2s.9 2 2 2h14c2.2 0 4 1.8 4 4v2z">
+            </path>
+        </g>
+    </svg>
+    <i class="hline"></i>
+    <strong>Lizus</strong>
+    <i class="hline"></i>
+    <em>A WordPress Coder</em>
+</h2>
+        
+            <p class="footer-p">
+                
+                        Developer Logs. Sometimes left , sometimes write.
+                            
+            </p>
+            
+            <p class="footer-p">
+                
+                        Copyright © 2024
+                            
+            </p>
+            
+</footer>
+    </div>
+  </body>
+
+</html>

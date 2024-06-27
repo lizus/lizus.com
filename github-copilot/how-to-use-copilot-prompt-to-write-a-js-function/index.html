@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+        <meta name="author" content="Lizus" />
+        
+          <meta name="keywords" content="github,github copilot,lizus,WordPress,javascript,css,WordPress theme,WordPress plugin,WordPress定制,hexo,html5,css3" />
+          
+              <title>
+                
+                        怎样编写Copilot的prompt及js示例 - Lizus | An Developer
+                              
+              </title>
+              <meta name="description" content="编写 Copilot 的 prompt 需要遵循以下几个步骤： 选择一个合适的语言，例如 Python、JavaScript 等，这决定了 Copilot 提供的代码片段的语言类型。 决定需要完成什么任务，例如生成一个字符串、处理数组等等。 编写一个描述任务的简短句子，可以包含任务需要的输入和输出信息。 在 Copilot 中输入句子，例如 “生成一个随机字符串”。 根据提示在 Copilot 中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="怎样编写Copilot的prompt及js示例">
+<meta property="og:url" content="https://lizus.com/github-copilot/how-to-use-copilot-prompt-to-write-a-js-function/index.html">
+<meta property="og:site_name" content="Lizus">
+<meta property="og:description" content="编写 Copilot 的 prompt 需要遵循以下几个步骤： 选择一个合适的语言，例如 Python、JavaScript 等，这决定了 Copilot 提供的代码片段的语言类型。 决定需要完成什么任务，例如生成一个字符串、处理数组等等。 编写一个描述任务的简短句子，可以包含任务需要的输入和输出信息。 在 Copilot 中输入句子，例如 “生成一个随机字符串”。 根据提示在 Copilot 中">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-12T01:21:27.000Z">
+<meta property="article:modified_time" content="2024-06-27T07:04:00.307Z">
+<meta property="article:author" content="Lizus">
+<meta property="article:tag" content="代码辅助工具">
+<meta name="twitter:card" content="summary">
+                
+    <link rel="apple-touch-icon" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png ">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    
+                  
+<link rel="stylesheet" href="/static/css/styles.css?v=1.0.3.css">
+
+                    
+                      
+<link rel="stylesheet" href="/%20/static/css/github-markdown.css">
+
+                    
+<link rel="stylesheet" href="/%20/static/css/highlight.css">
+
+                      
+                        
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELQNXEJ6TK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ELQNXEJ6TK');
+    </script>
+    
+  </head>
+
+  <body>
+    <div id="app" class="app">
+      <header class="header">
+    <h2 class="site-logo"><a href="https://lizus.com ">Lizus</a></h2>
+    <ul class="menu">
+        
+            <li>
+                <a href="/" target="_self">
+                    Home
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/wordpress" target="_self">
+                    WordPress
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/seo" target="_self">
+                    seo
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about" target="_self">
+                    About
+                </a>
+            </li>
+            
+    </ul>
+</header>
+        <section class="main">
+          <article class="post">
+  <h1 class="article-title">
+    怎样编写Copilot的prompt及js示例
+  </h1>
+  <div class="content markdown-body">
+    <h2 id="编写-Copilot-的-prompt-需要遵循以下几个步骤："><a href="#编写-Copilot-的-prompt-需要遵循以下几个步骤：" class="headerlink" title="编写 Copilot 的 prompt 需要遵循以下几个步骤："></a>编写 Copilot 的 prompt 需要遵循以下几个步骤：</h2><ol>
+<li>选择一个合适的语言，例如 Python、JavaScript 等，这决定了 Copilot 提供的代码片段的语言类型。</li>
+<li>决定需要完成什么任务，例如生成一个字符串、处理数组等等。</li>
+<li>编写一个描述任务的简短句子，可以包含任务需要的输入和输出信息。</li>
+<li>在 Copilot 中输入句子，例如 “生成一个随机字符串”。</li>
+<li>根据提示在 Copilot 中选择代码片段，如果没有适合的代码片段，可以在 Copilot 中手动编写代码。</li>
+<li>修改和完善代码，以满足特定需求。</li>
+<li>测试和调试代码，确保其符合预期。</li>
+</ol>
+<h2 id="以下是一些编写-Copilot-prompt-的技巧："><a href="#以下是一些编写-Copilot-prompt-的技巧：" class="headerlink" title="以下是一些编写 Copilot prompt 的技巧："></a>以下是一些编写 Copilot prompt 的技巧：</h2><ul>
+<li>简洁明了：prompt 句子应该简洁明了，表达出任务的本质，不要过多涉及细节。</li>
+<li>明确输入输出：prompt 应该明确输入和输出的类型，以便 Copilot 能够生成适当的代码。</li>
+<li>包含关键字：在 prompt 句子中使用关键字，例如 “for”、”if” 等等，可以帮助 Copilot 更好地理解任务。</li>
+<li>提供示例：如果可能，提供一些示例输入和输出，这可以帮助 Copilot 更好地理解任务和生成代码。</li>
+<li>了解限制：Copilot 有时会受到一些限制，例如最大字符数、编程语言限制等等，编写 prompt 时需要考虑这些限制。</li>
+<li>反复测试：编写完成后，反复测试和调试代码，确保其符合预期。</li>
+</ul>
+<h2 id="示例，使用js来编写一个数组排序函数"><a href="#示例，使用js来编写一个数组排序函数" class="headerlink" title="示例，使用js来编写一个数组排序函数"></a>示例，使用js来编写一个数组排序函数</h2><p>注释部分为输入的prompt，回车后copilot即生成代码，根据需求再调整即可应用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//描述：一个将数组的元素按指定的规则进行排序的函数</span></span><br><span class="line"><span class="comment">//输入：一个数组和一个排序顺序（值为：&quot;升序&quot;或&quot;降序&quot;）</span></span><br><span class="line"><span class="comment">//输出：一个排序后的数组</span></span><br><span class="line"><span class="comment">//请在下面输出代码</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sortArray</span>(<span class="params">arr, order</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (order == <span class="string">&quot;升序&quot;</span>) &#123;</span><br><span class="line">        arr.<span class="title function_">sort</span>(<span class="keyword">function</span> (<span class="params">a, b</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> a - b;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (order == <span class="string">&quot;降序&quot;</span>) &#123;</span><br><span class="line">        arr.<span class="title function_">sort</span>(<span class="keyword">function</span> (<span class="params">a, b</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> b - a;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  
+    <h3 class="article-meta">
+      - update 2024-06-27
+        
+          
+            <span>
+              <a href="https://lizus.com/categories/github-copilot/ ">
+                github copilot
+              </a>
+            </span>
+            
+              
+                
+                  
+                    <span>
+                      <a href="https://lizus.com/tags/%E4%BB%A3%E7%A0%81%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7/ ">
+                        代码辅助工具
+                      </a>
+                    </span>
+                    
+                      
+    </h3>
+    
+</article>
+
+  <nav class="post-navigation">
+    <span class="nav-item prev">
+      
+    </span>
+    <span class="nav-item next">
+      
+        <a class="nav-item-a" href="https://lizus.com/js/debounce-function-js/">
+          怎么限制在一定时间内只调用一次函数？使用js来实现debounce
+        </a>
+        
+    </span>
+  </nav>
+  
+        </section>
+        <footer class="footer">
+    <h2 class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.com/svgjs" width="100%" height="100%" viewBox="14 2 36 60">
+        <g>
+            <path
+                d="M45 36h-3v-4H14v25c0 2.8 2.2 5 5 5h18c2.8 0 5-2.2 5-5v-3h3c2.8 0 5-2.2 5-5v-8c0-2.8-2.2-5-5-5zM23.9 54.5l-1.7 1-4.4-7.5 4.3-7.5 1.7 1-3.6 6.5 3.7 6.5zm3.1.8l-2-.6 4-14 1.9.5L27 55.3zm6.9.2l-1.7-1 3.7-6.5-3.7-6.5 1.7-1 4.3 7.5-4.3 7.5zM48 49c0 1.7-1.3 3-3 3h-3V38h3c1.7 0 3 1.3 3 3v8zM38 30h-2v-2c0-1.1-.9-2-2-2H20c-2.2 0-4-1.8-4-4s1.8-4 4-4h14c1.1 0 2-.9 2-2s-.9-2-2-2H20c-2.2 0-4-1.8-4-4s1.8-4 4-4h14c1.1 0 2-.9 2-2V2h2v2c0 2.2-1.8 4-4 4H20c-1.1 0-2 .9-2 2s.9 2 2 2h14c2.2 0 4 1.8 4 4s-1.8 4-4 4H20c-1.1 0-2 .9-2 2s.9 2 2 2h14c2.2 0 4 1.8 4 4v2z">
+            </path>
+        </g>
+    </svg>
+    <i class="hline"></i>
+    <strong>Lizus</strong>
+    <i class="hline"></i>
+    <em>A WordPress Coder</em>
+</h2>
+        
+            <p class="footer-p">
+                
+                        Developer Logs. Sometimes left , sometimes write.
+                            
+            </p>
+            
+            <p class="footer-p">
+                
+                        Copyright © 2024
+                            
+            </p>
+            
+</footer>
+    </div>
+  </body>
+
+</html>

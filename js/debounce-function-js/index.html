@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+        <meta name="author" content="Lizus" />
+        
+          <meta name="keywords" content="debounce,github copilot,lizus,WordPress,javascript,css,WordPress theme,WordPress plugin,WordPress定制,hexo,html5,css3" />
+          
+              <title>
+                
+                        怎么限制在一定时间内只调用一次函数？使用js来实现debounce - Lizus | An Developer
+                              
+              </title>
+              <meta name="description" content="Debounce函数可以用来限制函数的调用次数。当一个函数被频繁调用时，Debounce函数可以确保该函数在一定时间内只被调用一次。这对于优化应用程序的性能非常有用。 让我们开始！ 第一步：打开VS Code如果您还没有安装VS Code，可以在官方网站上下载并安装它。VS Code是一个免费的、开源的代码编辑器，可在Windows、Mac和Linux上运行。 打开VS Code后，您应该看到一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="怎么限制在一定时间内只调用一次函数？使用js来实现debounce">
+<meta property="og:url" content="https://lizus.com/js/debounce-function-js/index.html">
+<meta property="og:site_name" content="Lizus">
+<meta property="og:description" content="Debounce函数可以用来限制函数的调用次数。当一个函数被频繁调用时，Debounce函数可以确保该函数在一定时间内只被调用一次。这对于优化应用程序的性能非常有用。 让我们开始！ 第一步：打开VS Code如果您还没有安装VS Code，可以在官方网站上下载并安装它。VS Code是一个免费的、开源的代码编辑器，可在Windows、Mac和Linux上运行。 打开VS Code后，您应该看到一个">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-11T01:45:36.000Z">
+<meta property="article:modified_time" content="2024-06-27T07:04:00.307Z">
+<meta property="article:author" content="Lizus">
+<meta property="article:tag" content="function">
+<meta name="twitter:card" content="summary">
+                
+    <link rel="apple-touch-icon" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png ">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    
+                  
+<link rel="stylesheet" href="/static/css/styles.css?v=1.0.3.css">
+
+                    
+                      
+<link rel="stylesheet" href="/%20/static/css/github-markdown.css">
+
+                    
+<link rel="stylesheet" href="/%20/static/css/highlight.css">
+
+                      
+                        
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELQNXEJ6TK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ELQNXEJ6TK');
+    </script>
+    
+  </head>
+
+  <body>
+    <div id="app" class="app">
+      <header class="header">
+    <h2 class="site-logo"><a href="https://lizus.com ">Lizus</a></h2>
+    <ul class="menu">
+        
+            <li>
+                <a href="/" target="_self">
+                    Home
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/wordpress" target="_self">
+                    WordPress
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/seo" target="_self">
+                    seo
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about" target="_self">
+                    About
+                </a>
+            </li>
+            
+    </ul>
+</header>
+        <section class="main">
+          <article class="post">
+  <h1 class="article-title">
+    怎么限制在一定时间内只调用一次函数？使用js来实现debounce
+  </h1>
+  <div class="content markdown-body">
+    <p>Debounce函数可以用来限制函数的调用次数。当一个函数被频繁调用时，Debounce函数可以确保该函数在一定时间内只被调用一次。这对于优化应用程序的性能非常有用。</p>
+<p>让我们开始！</p>
+<h2 id="第一步：打开VS-Code"><a href="#第一步：打开VS-Code" class="headerlink" title="第一步：打开VS Code"></a>第一步：打开VS Code</h2><p>如果您还没有安装VS Code，可以在官方网站上下载并安装它。VS Code是一个免费的、开源的代码编辑器，可在Windows、Mac和Linux上运行。</p>
+<p>打开VS Code后，您应该看到一个空白的编辑器界面。</p>
+<h2 id="第二步：创建一个新的JavaScript文件"><a href="#第二步：创建一个新的JavaScript文件" class="headerlink" title="第二步：创建一个新的JavaScript文件"></a>第二步：创建一个新的JavaScript文件</h2><p>为了编写Debounce函数的模块，我们需要创建一个新的JavaScript文件。</p>
+<p>在VS Code中，您可以通过单击<code>文件</code>菜单，然后选择<code>新建文件</code>来创建一个新文件。您也可以使用快捷键<code>Ctrl+N</code>（在Windows和Linux上）或<code>Cmd+N</code>（在Mac上）。</p>
+<p>将文件命名为<code>debounce.js</code>。这是我们将编写我们的Debounce函数的文件。</p>
+<h2 id="第三步：编写Debounce函数"><a href="#第三步：编写Debounce函数" class="headerlink" title="第三步：编写Debounce函数"></a>第三步：编写Debounce函数</h2><p>现在，我们可以开始编写我们的Debounce函数。</p>
+<p>Debounce函数是一个高阶函数，它接受一个函数和一个时间间隔作为参数，并返回一个新的函数。当这个新函数被调用时，它会延迟执行传入的函数，直到指定的时间间隔过去。</p>
+<p>以下是一个简单的Debounce函数的实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">func, delay</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> timer;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">clearTimeout</span>(timer);</span><br><span class="line">    timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      func.<span class="title function_">apply</span>(<span class="variable language_">this</span>, <span class="variable language_">arguments</span>);</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个函数中，我们首先声明一个变量timer，它用于存储当前延迟的定时器。然后，我们返回一个新的函数，这个函数将在一定时间后执行传入的函数。如果在延迟期间再次调用这个新函数，则旧的延迟将被取消，并重新计时。</p>
+<h2 id="第四步：测试Debounce函数"><a href="#第四步：测试Debounce函数" class="headerlink" title="第四步：测试Debounce函数"></a>第四步：测试Debounce函数</h2><p>现在，我们可以测试我们的Debounce函数。</p>
+<p>在<code>debounce.js</code>文件中，添加以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myFunc</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello, World!&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> debouncedFunc = <span class="title function_">debounce</span>(myFunc, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="title function_">debouncedFunc</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个代码定义了一个名为<code>myFunc</code>的函数，并将其传递给Debounce函数作为参数，以及一个时间间隔（1000毫秒）。然后，我们使用for循环来多次调用debouncedFunc函数。</p>
+<p>由于我们传递给Debounce函数的时间间隔为1秒，因此在1秒内，函数myFunc只会被调用一次。这可以避免函数被频繁调用，从而提高应用程序的性能。</p>
+
+  </div>
+  
+    <h3 class="article-meta">
+      - update 2024-06-27
+        
+          
+            <span>
+              <a href="https://lizus.com/categories/js/ ">
+                js
+              </a>
+            </span>
+            
+              
+                
+                  
+                    <span>
+                      <a href="https://lizus.com/tags/function/ ">
+                        function
+                      </a>
+                    </span>
+                    
+                      
+    </h3>
+    
+</article>
+
+  <nav class="post-navigation">
+    <span class="nav-item prev">
+      
+        <a class="nav-item-a" href="https://lizus.com/github-copilot/how-to-use-copilot-prompt-to-write-a-js-function/">
+          怎样编写Copilot的prompt及js示例
+        </a>
+        
+    </span>
+    <span class="nav-item next">
+      
+        <a class="nav-item-a" href="https://lizus.com/github-copilot/use-copilot-to-create-hello-word-html/">
+          怎样使用Copilot协助制作HTML页面的hellow world教程
+        </a>
+        
+    </span>
+  </nav>
+  
+        </section>
+        <footer class="footer">
+    <h2 class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.com/svgjs" width="100%" height="100%" viewBox="14 2 36 60">
+        <g>
+            <path
+                d="M45 36h-3v-4H14v25c0 2.8 2.2 5 5 5h18c2.8 0 5-2.2 5-5v-3h3c2.8 0 5-2.2 5-5v-8c0-2.8-2.2-5-5-5zM23.9 54.5l-1.7 1-4.4-7.5 4.3-7.5 1.7 1-3.6 6.5 3.7 6.5zm3.1.8l-2-.6 4-14 1.9.5L27 55.3zm6.9.2l-1.7-1 3.7-6.5-3.7-6.5 1.7-1 4.3 7.5-4.3 7.5zM48 49c0 1.7-1.3 3-3 3h-3V38h3c1.7 0 3 1.3 3 3v8zM38 30h-2v-2c0-1.1-.9-2-2-2H20c-2.2 0-4-1.8-4-4s1.8-4 4-4h14c1.1 0 2-.9 2-2s-.9-2-2-2H20c-2.2 0-4-1.8-4-4s1.8-4 4-4h14c1.1 0 2-.9 2-2V2h2v2c0 2.2-1.8 4-4 4H20c-1.1 0-2 .9-2 2s.9 2 2 2h14c2.2 0 4 1.8 4 4s-1.8 4-4 4H20c-1.1 0-2 .9-2 2s.9 2 2 2h14c2.2 0 4 1.8 4 4v2z">
+            </path>
+        </g>
+    </svg>
+    <i class="hline"></i>
+    <strong>Lizus</strong>
+    <i class="hline"></i>
+    <em>A WordPress Coder</em>
+</h2>
+        
+            <p class="footer-p">
+                
+                        Developer Logs. Sometimes left , sometimes write.
+                            
+            </p>
+            
+            <p class="footer-p">
+                
+                        Copyright © 2024
+                            
+            </p>
+            
+</footer>
+    </div>
+  </body>
+
+</html>
