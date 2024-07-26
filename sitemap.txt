@@ -1,3 +1,4 @@
+https://lizus.com/wordpress/why-you-need-a-website/
 https://lizus.com/about.html
 https://lizus.com/wordpress/wp-date/
 https://lizus.com/github-copilot/use-copilot-to-create-hello-word-html/
@@ -24,6 +25,7 @@ https://lizus.com/tags/function/
 https://lizus.com/tags/jquery-plugin/
 https://lizus.com/tags/seo%E5%B7%A5%E5%85%B7/
 https://lizus.com/tags/date/
+https://lizus.com/tags/website/
 https://lizus.com/categories/github-copilot/
 https://lizus.com/categories/wordpress/
 https://lizus.com/categories/html5/
