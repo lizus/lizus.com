@@ -1,5 +1,6 @@
-https://lizus.com/wordpress/why-you-need-a-website/
+https://lizus.com/wordpress/why-choose-wordpress/
 https://lizus.com/about.html
+https://lizus.com/wordpress/why-you-need-a-website/
 https://lizus.com/wordpress/wp-date/
 https://lizus.com/github-copilot/use-copilot-to-create-hello-word-html/
 https://lizus.com/html5/html5-video-autoplay/
